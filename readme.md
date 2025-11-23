@@ -43,8 +43,11 @@ Example:
 gemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer figd_abc123xyz789"
 
 Step 3: Verify Connection
-Bashgemini mcp list
+
+gemini mcp list
+
 Success dekhna chahiye:
+
 textConnected figma - Ready (8 tools, 1 prompt)
 
 Step 4: Prepare Your Figma File
