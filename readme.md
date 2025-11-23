@@ -1,65 +1,76 @@
-   # 🎨✨ Connecting Figma to Gemini CLI
+<div align="center">
 
-A **complete step-by-step guide** to convert your Figma designs into clean, production-ready code using **Gemini CLI**.
+# Figma → Code in Seconds  
+### The Ultimate Student Guide to Connect **Figma + Gemini CLI**
 
----
+[![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://figma.com)
+[![Gemini](https://img.shields.io/badge/Gemini_CLI-8B5CF6?style=for-the-badge&logo=google-gemini&logoColor=white)](https://ai.google.dev)
+[![Made for Students](https://img.shields.io/badge/Made_for-Students-10B981?style=for-the-badge)](https://github.com)
 
-## 🔑 Step 1: Generate Figma Personal Access Token (PAT)
+Turn any Figma design into **clean, production-ready code** — HTML, React, Tailwind, Next.js — in just one command!
 
-1. Go to [figma.com](https://www.figma.com) and log in  
-2. Click your **Profile Icon** → **Settings**  
-3. Open the **Account** tab  
-4. Scroll down to **Personal access tokens**  
-5. Tick **all checkboxes** (required for full access)  
-6. Click **Generate new token**  
-7. Name it (e.g. `Gemini CLI Access`)  
-8. Click **Generate token**  
-9. ⚠️ **Copy the token immediately** — you won’t see it again!
+</div>
 
 ---
 
-## 🔗 Step 2: Connect Figma MCP Server to Gemini CLI
+### Step 1: Get Your Figma Personal Access Token (PAT)
 
-Open your terminal and run:
+1. Login → [figma.com](https://www.figma.com)
+2. Click your avatar → **Settings**
+3. Go to **Account** tab → Scroll to **Personal access tokens**
+4. Tick **all permissions**
+5. Click **Generate new token**
+6. Name it → `Gemini CLI Access`
+7. Generate → **COPY THE TOKEN RIGHT NOW** (no second chance!)
+
+> Save it somewhere safe (like a notes app)
+
+---
+
+### Step 2: Connect Figma to Gemini CLI (One-Time Setup)
+
+Open terminal and paste:
 
 ```bash
 gemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer YOUR_TOKEN_HERE"
 Example:
-Bashgemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer figd_abc123xyz789"
+Bashgemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer figd_x7k9p2m..."
 
-🟢 Step 3: Verify the Connection
+Step 3: Verify Connection (Must Show Green)
 Bashgemini mcp list
-You should see:
-Bash🟢 figma - Ready (8 tools, 1 prompt)
+Success output:
+BashConnected figma - Ready (8 tools available)
 
-📁 Step 4: Prepare Your Figma File
-Make the file public
+Step 4: Prepare Your Figma File (Super Important)
 
-Open your file → Click Share (top-right)
-Set to “Anyone with the link can view”
-Copy the link
-
-Copy the exact Frame link
-
-Select the frame you want to convert
-Right-click → Copy link to selection
+Open your design
+Click Share → Anyone with the link can view
+Select the frame you want → Right click → Copy link to selection
 
 Example link:
-texthttps://www.figma.com/design/abc123/MyProject?node-id=1-23&t=45567
+texthttps://www.figma.com/design/xyz123/Dashboard?node-id=45-789
 
-🧩 Step 5: Generate Code from Figma
-Just run this command (replace the link with yours):
-Bashgemini "Get the design context from [PASTE_YOUR_FIGMA_LINK_HERE] and generate HTML and CSS"
-Real example:
-Bashgemini "Get the design context from https://www.figma.com/design/abRnucBMTsgblvDB6ymtd1/Hospital-Design?node-id=1-218 and generate HTML and CSS"
-Gemini will automatically:
+Step 5: Generate Code (The Magic Part!)
+Basic HTML + CSS
+Bashgemini "Convert this Figma frame to clean HTML and CSS: https://www.figma.com/design/xyz123/Dashboard?node-id=45-789"
+React + Tailwind (Most Popular)
+Bashgemini "Convert this frame to React with Tailwind CSS and make it fully responsive: [YOUR_LINK]"
+Next.js + TypeScript
+Bashgemini "Create a Next.js 14 component with TypeScript and Tailwind from this Figma frame: [LINK]"
+Gemini automatically reads:
+Colors • Spacing • Typography • Shadows • Layout • Images
 
-Fetch layout, colors, typography, spacing, shadows, etc.
-Output clean, production-ready code directly in your terminal
+Pro Example Prompts (Copy-Paste Ready)
+Bash# React + Tailwind + Responsive + Dark Mode
+gemini "Turn this Figma design into a beautiful React component using Tailwind CSS. Make it mobile-responsive and support dark mode: [LINK]"
 
+# Full Landing Page (HTML)
+gemini "Generate a complete responsive landing page with semantic HTML5 and modern CSS from this Figma file: [LINK]"
 
-🎛️ Step 6: Optional — Customize the Output
+# Save files directly
+gemini "Generate React + Tailwind code from [LINK] and save as Home.jsx and page.tsx"
 
+Troubleshooting (Common Fixes)
 
 
 
@@ -81,124 +92,27 @@ Output clean, production-ready code directly in your terminal
 
 
 
+IssueFix"File could not be accessed"Make file public + use frame link (not file link)"Disconnected" or red dotRun: gemini mcp remove figma → redo Step 2Token not workingGenerate new token → copy without spaces
 
+Final Checklist (Tick Karo!)
 
+ Gemini CLI installed
+ Figma PAT generated & copied
+gemini mcp add command chalaya
+gemini mcp list → green tick
+ Figma file public + frame link copied
+ Code generate kiya → boss level complete!
 
-GoalPrompt ExampleReact + Tailwindgemini "Get design context from [LINK] and generate React components with Tailwind CSS"Responsive HTML/CSSgemini "Use get_design_context on [LINK] and create mobile-responsive HTML and CSS"Next.js + TypeScriptgemini "Create a Next.js page/component from [LINK] using TypeScript and Tailwind"Vue 3gemini "Generate a Vue 3 component with Composition API from [LINK]"
 
-🧰 Quick Troubleshooting
+Bonus: Best Prompt Template (Save This!)
+Bashgemini "Convert this Figma frame to [React/Next.js/HTML] using [Tailwind/Bootstrap/plain CSS]. Make it pixel-perfect, responsive, accessible, and production-ready: [PASTE_LINK_HERE]"
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ProblemSolution“This figma file could not be accessed”• Set file to Anyone with the link can view
-• Use a file you own
-• Test with a public Community fileFigma shows “Disconnected”bash<br>gemini mcp remove figma<br>
-then re-run Step 2Token issuesGenerate a new token → copy without spaces → reconnect
-
-✅ Summary Checklist
-
- Install Gemini CLI
- Create Figma Personal Access Token
- Connect Figma MCP (gemini mcp add …)
- Verify: gemini mcp list shows figma - Ready
- Make Figma file public + copy frame link
- Run the magic command:Bashgemini "Get design context from [LINK] and generate code"
- Save & use your code!
-
-
-🛠️ Available Figma Tools (for advanced prompts)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ToolPurposeget_design_contextExtract full design structureget_screenshotCapture design previewget_metadataGet variables + stylesget_variable_defsExtract design tokensget_code_connect_mapMap components to codeget_figjamAccess FigJam contentwhoamiVerify account
-
-💡 Tips for Best Results
-
-Be very specific in your prompts
-Mention the framework/library you want (Tailwind, React, Next.js, etc.)
-Convert one frame at a time
-Ask Gemini to make the code responsive, accessible, etc.
-You can even say: “also save the code as index.html and style.css”
-
-
-🚀 Ready-to-Use Example Prompts
-Bash# Simple HTML + CSS
-gemini "Get design context from [LINK] and generate semantic HTML5 with modern CSS"
-
-# React + Tailwind (responsive)
-gemini "Convert this Figma frame to React: [LINK]. Use Tailwind CSS and make it fully responsive"
-
-# Next.js + TypeScript
-gemini "Create a Next.js component from [LINK] with TypeScript and Tailwind CSS"
-
-# Vue 3
-gemini "Generate a Vue 3 component with Composition API and Tailwind from [LINK]"
-
-📬 Need Help?
-
-Figma MCP Docs → https://mcp.figma.com
-Gemini CLI Docs → (ask your instructor)
-Just ping your instructor!
-
-
-🌐 My Socials
-🔗 LinkedIn: https://www.linkedin.com/in/mohsin-raza-a514392b6
-▶️ YouTube: https://youtube.com/@YourChannel
-📘 Facebook: https://facebook.com/yourpage
-
-🎉 Happy Coding!
-You’re now ready to turn any Figma design → production-ready code in seconds!
-Figma → Code → Ship it! 🚀
-textCopy-paste kar do ye pura content apne `README.md` mein — bilkul clean aur professional dikhega GitHub par
+Made with love by
+Mohsin Raza
+Student • UI/UX + Frontend Ninja
+LinkedIn
+YouTube
+Instagram
+Figma → Code → Ship Fast → Get Hired
+Ab design banane ke baad code likhne ki tension khatam!
