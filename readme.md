@@ -1,4 +1,4 @@
-# 🎨✨ Connecting Figma to Gemini CLI — Student Guide
+   # 🎨✨ Connecting Figma to Gemini CLI
 
 A **complete step-by-step guide** to convert your Figma designs into clean, production-ready code using **Gemini CLI**.
 
