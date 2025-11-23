@@ -1,76 +1,59 @@
 <div align="center">
 
-# Figma → Code in Seconds  
+# Figma → Code in Seconds
 ### The Ultimate Student Guide to Connect **Figma + Gemini CLI**
 
-[![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://figma.com)
-[![Gemini](https://img.shields.io/badge/Gemini_CLI-8B5CF6?style=for-the-badge&logo=google-gemini&logoColor=white)](https://ai.google.dev)
-[![Made for Students](https://img.shields.io/badge/Made_for-Students-10B981?style=for-the-badge)](https://github.com)
+<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma"/>
+<img src="https://img.shields.io/badge/Gemini_CLI-8B5CF6?style=for-the-badge&logo=google-gemini&logoColor=white" alt="Gemini"/>
+<img src="https://img.shields.io/badge/Made_for-Students-10B981?style=for-the-badge" alt="Students"/>
 
-Turn any Figma design into **clean, production-ready code** — HTML, React, Tailwind, Next.js — in just one command!
+**Turn any Figma design into clean code in 10 seconds**  
+HTML • React • Tailwind • Next.js • Vue
 
 </div>
 
 ---
 
-### Step 1: Get Your Figma Personal Access Token (PAT)
+### Step 1: Figma Personal Access Token (PAT) Banaye
 
-1. Login → [figma.com](https://www.figma.com)
-2. Click your avatar → **Settings**
-3. Go to **Account** tab → Scroll to **Personal access tokens**
-4. Tick **all permissions**
-5. Click **Generate new token**
-6. Name it → `Gemini CLI Access`
-7. Generate → **COPY THE TOKEN RIGHT NOW** (no second chance!)
-
-> Save it somewhere safe (like a notes app)
+1. [figma.com](https://www.figma.com) pe login karo  
+2 Avatar → Settings → Account tab  
+3 Neeche **Personal access tokens** mein jao  
+4 Saare checkboxes tick karo  
+5 **Generate new token** → naam daalo → Generate  
+6 Token **turant copy kar lo** (doosri baar nahi dikhega!)
 
 ---
 
-### Step 2: Connect Figma to Gemini CLI (One-Time Setup)
+### Step 2: Gemini CLI se Connect Karo (Ek Baar Ka Kaam)
 
-Open terminal and paste:
 
-```bash
-gemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer YOUR_TOKEN_HERE"
-Example:
-Bashgemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer figd_x7k9p2m..."
+gemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer YOUR_TOKEN"
 
-Step 3: Verify Connection (Must Show Green)
-Bashgemini mcp list
-Success output:
-BashConnected figma - Ready (8 tools available)
+Step 3: Connection Check Karo
+gemini mcp list
+Yeh aana chahiye → figma - Ready
 
-Step 4: Prepare Your Figma File (Super Important)
+Step 4: Figma File Ready Karo
 
-Open your design
-Click Share → Anyone with the link can view
-Select the frame you want → Right click → Copy link to selection
+Share button → Anyone with the link can view
+Frame select karo → Right click → Copy link to selection
 
-Example link:
-texthttps://www.figma.com/design/xyz123/Dashboard?node-id=45-789
 
-Step 5: Generate Code (The Magic Part!)
-Basic HTML + CSS
-Bashgemini "Convert this Figma frame to clean HTML and CSS: https://www.figma.com/design/xyz123/Dashboard?node-id=45-789"
-React + Tailwind (Most Popular)
-Bashgemini "Convert this frame to React with Tailwind CSS and make it fully responsive: [YOUR_LINK]"
-Next.js + TypeScript
-Bashgemini "Create a Next.js 14 component with TypeScript and Tailwind from this Figma frame: [LINK]"
-Gemini automatically reads:
-Colors • Spacing • Typography • Shadows • Layout • Images
+Step 5: Code Generate Karo (Asli Mazaa Yahan Hai)
+# Simple HTML + CSS
+gemini "Convert this Figma frame to clean HTML and CSS: YOUR_LINK"
 
-Pro Example Prompts (Copy-Paste Ready)
-Bash# React + Tailwind + Responsive + Dark Mode
-gemini "Turn this Figma design into a beautiful React component using Tailwind CSS. Make it mobile-responsive and support dark mode: [LINK]"
+# React + Tailwind (Sabse Zyada Use Hota Hai)
+gemini "Convert this to React with Tailwind CSS, fully responsive: YOUR_LINK"
 
-# Full Landing Page (HTML)
-gemini "Generate a complete responsive landing page with semantic HTML5 and modern CSS from this Figma file: [LINK]"
+# Next.js Component
+gemini "Create Next.js 14 page with TypeScript and Tailwind from this frame: YOUR_LINK"
 
-# Save files directly
-gemini "Generate React + Tailwind code from [LINK] and save as Home.jsx and page.tsx"
+Sabse Best Prompt (Save Kar Lo)
+gemini "Convert this Figma frame to pixel-perfect React component using Tailwind CSS. Make it fully responsive, accessible, and production ready: YOUR_LINK_HERE"
 
-Troubleshooting (Common Fixes)
+Common Errors & Fix
 
 
 
@@ -92,27 +75,25 @@ Troubleshooting (Common Fixes)
 
 
 
-IssueFix"File could not be accessed"Make file public + use frame link (not file link)"Disconnected" or red dotRun: gemini mcp remove figma → redo Step 2Token not workingGenerate new token → copy without spaces
+ProblemSolutionFile not accessibleFile public karo + frame link use karoDisconnected ya red dotgemini mcp remove figma → Step 2 dobaraToken expire/invalidNaya token banao
 
-Final Checklist (Tick Karo!)
+
+Final Checklist
 
  Gemini CLI installed
- Figma PAT generated & copied
-gemini mcp add command chalaya
-gemini mcp list → green tick
- Figma file public + frame link copied
- Code generate kiya → boss level complete!
+ Figma token banaya & copy kiya
+gemini mcp add kiya
+gemini mcp list → green
+ Frame link copy kiya
+ Code generate → Done!
 
 
-Bonus: Best Prompt Template (Save This!)
-Bashgemini "Convert this Figma frame to [React/Next.js/HTML] using [Tailwind/Bootstrap/plain CSS]. Make it pixel-perfect, responsive, accessible, and production-ready: [PASTE_LINK_HERE]"
 
 
-Made with love by
-Mohsin Raza
-Student • UI/UX + Frontend Ninja
+Made with ❤️ by Mohsin Raza
+UI/UX + Frontend Student
 LinkedIn
 YouTube
 Instagram
-Figma → Code → Ship Fast → Get Hired
 Ab design banane ke baad code likhne ki tension khatam!
+Figma → Code → Ship → Get Hired
