@@ -73,7 +73,7 @@ If you see this — **you're all set! ✅**
 Example format:
 
 ```
-https://www.figma.com/design/abc123/MyProject?node-id=1-23&t=45567
+https://www.figma.com/design/ZEUQVvhwGubXJOpNCW2cDb/Template_Two_Copy?t=ZYMJ03npcXONqaG9-0
 ```
 
 ---
