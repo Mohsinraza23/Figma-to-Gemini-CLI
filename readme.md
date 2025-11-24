@@ -1,63 +1,172 @@
-# 🔗 Connecting Figma to Gemini CLI  
-### Turn Your Figma Designs into Production-Ready Code in Seconds! ⚡
+# Figma → Code with Gemini CLI  
+### Official Student Guide (2025)
 
-[![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://figma.com)
-[![Gemini CLI](https://img.shields.io/badge/Gemini_CLI-8B3EFF?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/gemini-api)
-[![Made for Students](https://img.shields.io/badge/Made_for-Students-10B981?style=for-the-badge)](https://github.com)
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg" width="60" align="right" />
 
-A complete **step-by-step student guide** to connect Figma with Gemini CLI and convert any design frame into clean HTML, CSS, React, Tailwind, Next.js, Vue — you name it! 🚀
+Turn your **Figma designs into production-ready code** instantly using **Google Gemini CLI** — no more manual HTML/CSS grinding!
 
----
-
-## 🚀 Step 1: Generate Figma Personal Access Token (PAT)
-
-1. Go to [Figma.com](https://www.figma.com) and log in  
-2. Click your **profile icon** (top-right) → **Settings**  
-3. Go to **Account** tab  
-4. Scroll to **Personal access tokens**  
-5. ✅ **Tick all checkboxes** (very important!)  
-6. Click **Generate new token**  
-7. Name it (e.g., `Gemini CLI Access`)  
-8. Click **Generate token**  
-9. ⚠️ **Copy the token immediately** — you won’t see it again!  
-10. Store it safely (password manager recommended)
+Supports: **HTML • CSS • React • Tailwind • Next.js • Vue • TypeScript • Responsive • Dark Mode**
 
 ---
 
-## 🔌 Step 2: Connect Figma MCP Server to Gemini CLI
+## Prerequisites
 
-Open a new terminal and run:
+Before starting, make sure you have:
+
+- [Gemini CLI installed](https://ai.google.dev/gemini-api/docs/cli)  
+- A Figma account (free works perfectly)  
+- Basic terminal knowledge
+
+---
+
+## Step 1: Generate Figma Personal Access Token
+
+1. Go to → [https://www.figma.com](https://www.figma.com)  
+2. Click your avatar → **Settings**  
+3. Go to **Account** → **Personal access tokens**  
+4. **Check all permission boxes** (required for full access)  
+5. Click **Generate new token**  
+6. Name it: `Gemini CLI Token`  
+7. **Copy the token immediately** (it won't show again!)  
+8. Save it securely
+
+> Never commit this token to GitHub!
+
+---
+
+## Step 2: Connect Figma to Gemini CLI
+
+Open your terminal and run:
 
 ```bash
-gemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer YOUR_TOKEN_HERE"
-
-Replace YOUR_TOKEN_HERE with your actual token.
+gemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer YOUR_TOKEN"
+Replace YOUR_TOKEN with your actual PAT.
 Example:
+Bashgemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer figd_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
-gemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer figd_abc123xyz789"
+Step 3: Verify Connection
+Bashgemini mcp list
+You should see:
+Bash🟢 figma - Ready (8 tools available)
+Success! You're now connected.
 
-✅ Step 3: Verify Connection
+Step 4: Prepare Your Figma File
+1. Share Settings
 
-gemini mcp list
+Open your file → Click Share (top right)
+Set permission: Anyone with the link → Can view
+Copy the file link
 
-Success looks like this:
-🟢 figma - Ready (8 tools, 1 prompt)
-
-You’re connected! 🎉
-🖼️ Step 4: Prepare Your Figma File
-Make File Accessible
-
-Open your design file
-Click Share (top-right)
-Set to "Anyone with the link can view"
-Copy the link
-
-Get Frame Link
+2. Get Frame Link (Important!)
 
 Select the frame you want to convert
-Right-click → Copy link to selection
-Save this link
+Right-click → Copy/Paste link to selection
+This gives you the exact node-id needed
 
 Example link:
-https://www.figma.com/design/abc123/MyProject?node-id=1-23&t=45567
+texthttps://www.figma.com/design/abc123/Project?t=xyz&node-id=45-678
 
+Step 5: Generate Code (The Magic)
+Basic HTML + CSS
+Bashgemini "Convert this Figma frame to clean, semantic HTML and modern CSS: [YOUR_FRAME_LINK]"
+React + Tailwind CSS (Recommended)
+Bashgemini "Generate a responsive React component using Tailwind CSS from this design: [LINK]"
+Next.js 14 + TypeScript + App Router
+Bashgemini "Create a complete Next.js 14 page with TypeScript, app router and Tailwind from: [LINK]"
+Vue 3 + Composition API
+Bashgemini "Build a Vue 3 component with Composition API and Tailwind from this frame: [LINK]"
+Code appears instantly in your terminal!
+
+Available Figma Tools (After Connection)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ToolDescriptionget_design_contextExtracts full layout, colors, spacing, textget_screenshotReturns image of selected frameget_metadataFile info, variables, stylesget_variable_defsExtracts design tokens & variableswhoamiShows connected Figma account
+
+Troubleshooting
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IssueFix"File could not be accessed"Ensure file is shared as Anyone with link can view"Unauthorized" or token errorRegenerate PAT with all permissions checkedFigma shows disconnectedRun: gemini mcp remove figma → Reconnect with new tokenWrong frame selectedAlways use Copy link to selection (not just file link)
+
+Best Practices & Pro Tips
+
+Always start with one frame
+Use specific prompts:
+→ "Make it mobile-first responsive"
+→ "Use Tailwind v3.4+"
+→ "Add dark mode with dark: prefix"
+→ "Include proper ARIA labels"
+Ask to save files:
+→ "...and save as HomePage.tsx and styles.css"
+
+
+Example Prompts (Copy-Paste Ready)
+Bashgemini "Create a fully responsive landing page in React + Tailwind from this frame. Use modern best practices: https://www.figma.com/file/...&node-id=123-456"
+Bashgemini "Generate a Next.js dashboard sidebar component with dark mode support from: [LINK]"
+Bashgemini "Convert this card design to HTML + Tailwind with hover effects and accessibility: [LINK]"
+
+Final Checklist
+
+ Gemini CLI installed
+ Figma PAT generated & saved
+ Connected via gemini mcp add
+ Verified with gemini mcp list
+ File shared publicly
+ Used frame-specific link
+ Ran code generation prompt
+
+
+Resources
+
+Gemini CLI Docs → https://ai.google.dev/gemini-api/docs/cli
+Figma MCP → https://mcp.figma.com
+Gemini API → https://ai.google.dev
