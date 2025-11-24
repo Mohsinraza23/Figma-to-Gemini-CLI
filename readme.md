@@ -1,8 +1,5 @@
-<p align="center">
-  <img src="/mnt/data/Screenshot (106).png" width="100%" />
-</p>
 
-# 🚀 Connecting Figma to Gemini CLI - Student Guide  
+## 🚀 Connecting Figma to Gemini CLI - Student Guide  
 A step-by-step guide to convert your Figma designs into code using Gemini CLI.
 
 ---
@@ -235,5 +232,5 @@ You're now ready to convert designs to code seamlessly!
 
 ### 🔗 Connect With Me  
 **LinkedIn:** https://www.linkedin.com/in/mohsin-raza-a514392b6  
-**YouTube:** *Add your link here*  
-**Facebook:** *Add your link here*  
+**YouTube:** *https://www.youtube.com/@TechMohsin581*  
+**Facebook:** *https://www.facebook.com/profile.php?id=61578455632342*  
