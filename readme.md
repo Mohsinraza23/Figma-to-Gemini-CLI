@@ -1,172 +1,155 @@
+```markdown
 # Figma → Code with Gemini CLI  
-### Official Student Guide (2025)
+### Official Student Guide • 2025
 
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg" width="60" align="right" />
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg" alt="Figma" width="60" align="right"/>
 
-Turn your **Figma designs into production-ready code** instantly using **Google Gemini CLI** — no more manual HTML/CSS grinding!
-
-Supports: **HTML • CSS • React • Tailwind • Next.js • Vue • TypeScript • Responsive • Dark Mode**
+Instantly convert your Figma designs into **HTML • CSS • React • Tailwind • Next.js • Vue • TypeScript** using Google Gemini CLI.
 
 ---
 
 ## Prerequisites
-
-Before starting, make sure you have:
-
-- [Gemini CLI installed](https://ai.google.dev/gemini-api/docs/cli)  
-- A Figma account (free works perfectly)  
-- Basic terminal knowledge
+- Gemini CLI installed → [Official Docs](https://ai.google.dev/gemini-api/docs/cli)
+- Figma account (free tier is enough)
+- Basic terminal access
 
 ---
 
-## Step 1: Generate Figma Personal Access Token
+## Step 1 → Generate Figma Personal Access Token (PAT)
 
-1. Go to → [https://www.figma.com](https://www.figma.com)  
-2. Click your avatar → **Settings**  
-3. Go to **Account** → **Personal access tokens**  
-4. **Check all permission boxes** (required for full access)  
-5. Click **Generate new token**  
-6. Name it: `Gemini CLI Token`  
-7. **Copy the token immediately** (it won't show again!)  
-8. Save it securely
-
-> Never commit this token to GitHub!
+1. Go to [figma.com](https://www.figma.com) → Login  
+2. Avatar → **Settings** → **Account** → **Personal access tokens**  
+3. **Check all permission boxes** (mandatory)  
+4. Click **Generate new token** → Name it `Gemini CLI`  
+5. **Copy the token immediately** (you won’t see it again)  
+6. Save it securely (never commit to GitHub!)
 
 ---
 
-## Step 2: Connect Figma to Gemini CLI
-
-Open your terminal and run:
+## Step 2 → Connect Figma to Gemini CLI
 
 ```bash
-gemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer YOUR_TOKEN"
-Replace YOUR_TOKEN with your actual PAT.
+gemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer YOUR_TOKEN_HERE"
+```
+
 Example:
-Bashgemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer figd_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+```bash
+gemini mcp add --transport http figma https://mcp.figma.com/mcp --header "Authorization: Bearer figd_xxxxxxxxxxxxxxxxxx"
+```
 
-Step 3: Verify Connection
-Bashgemini mcp list
+---
+
+## Step 3 → Verify Connection
+
+```bash
+gemini mcp list
+```
+
 You should see:
-Bash🟢 figma - Ready (8 tools available)
-Success! You're now connected.
+```
+figma - Ready (8 tools available)
+```
 
-Step 4: Prepare Your Figma File
-1. Share Settings
+---
 
-Open your file → Click Share (top right)
-Set permission: Anyone with the link → Can view
-Copy the file link
+## Step 4 → Prepare Your Figma File
 
-2. Get Frame Link (Important!)
+### Share File
+- Open file → **Share** → **Anyone with the link → Can view** → Copy link
 
-Select the frame you want to convert
-Right-click → Copy/Paste link to selection
-This gives you the exact node-id needed
+### Get Exact Frame Link (Important!)
+- Select the frame → Right-click → **Copy/Paste link to selection**  
+Example:
+```
+https://www.figma.com/design/abc123/Project?node-id=45-678&t=xyz
+```
 
-Example link:
-texthttps://www.figma.com/design/abc123/Project?t=xyz&node-id=45-678
+---
 
-Step 5: Generate Code (The Magic)
-Basic HTML + CSS
-Bashgemini "Convert this Figma frame to clean, semantic HTML and modern CSS: [YOUR_FRAME_LINK]"
-React + Tailwind CSS (Recommended)
-Bashgemini "Generate a responsive React component using Tailwind CSS from this design: [LINK]"
-Next.js 14 + TypeScript + App Router
-Bashgemini "Create a complete Next.js 14 page with TypeScript, app router and Tailwind from: [LINK]"
-Vue 3 + Composition API
-Bashgemini "Build a Vue 3 component with Composition API and Tailwind from this frame: [LINK]"
-Code appears instantly in your terminal!
+## Step 5 → Generate Code (Magic!)
 
-Available Figma Tools (After Connection)
+### HTML + CSS
+```bash
+gemini "Convert this Figma frame to clean semantic HTML and modern CSS: [FRAME_LINK]"
+```
 
+### React + Tailwind (Most Used)
+```bash
+gemini "Generate a fully responsive React component with Tailwind CSS from: [LINK]"
+```
 
+### Next.js 14 + TypeScript
+```bash
+gemini "Create a Next.js 14 page/component with TypeScript and Tailwind from this design: [LINK]"
+```
 
+### Vue 3
+```bash
+gemini "Build a Vue 3 component with Composition API and Tailwind from: [LINK]"
+```
 
+---
 
+## Available Tools (After Connection)
 
+| Tool                  | Purpose                                      |
+|-----------------------|----------------------------------------------|
+| get_design_context    | Full layout, colors, spacing, typography     |
+| get_screenshot        | Image of the frame                           |
+| get_metadata          | File info & styles                           |
+| get_variable_defs     | Design tokens & variables                    |
+| whoami                | Connected account info                       |
 
+---
 
+## Troubleshooting
 
+| Problem                          | Solution                                                      |
+|----------------------------------|---------------------------------------------------------------|
+| "File could not be accessed"     | Share as **Anyone with link can view**                        |
+| Token error / Unauthorized       | Regenerate PAT with **all boxes checked**                     |
+| Figma disconnected               | `gemini mcp remove figma` → Re-add token                     |
+| Wrong frame                      | Always use **Copy link to selection**                         |
 
+---
 
+## Pro Tips
 
+- Convert one frame at a time  
+- Be specific: “mobile-first”, “dark mode”, “ARIA labels”  
+- Ask to save files: “…and save as `Component.tsx`”  
 
+---
 
+## Ready-to-Use Prompts
 
+```bash
+gemini "Create responsive React + Tailwind landing page from: https://www.figma.com/file/...&node-id=..."
+```
 
+```bash
+gemini "Generate Next.js dashboard with dark mode from this frame: [LINK]"
+```
 
+---
 
+## Final Checklist
 
+- [ ] Gemini CLI installed  
+- [ ] PAT generated & copied  
+- [ ] Connected with `gemini mcp add`  
+- [ ] Verified connection  
+- [ ] File shared publicly  
+- [ ] Used frame-specific link  
+- [ ] Code generated!
 
+---
 
+**Resources**  
+- Gemini CLI → https://ai.google.dev/gemini-api/docs/cli  
+- Figma MCP → https://mcp.figma.com  
 
+**Figma to Code in 10 seconds — not 10 hours.**  
+Happy coding!
+```
 
-
-
-
-
-
-
-ToolDescriptionget_design_contextExtracts full layout, colors, spacing, textget_screenshotReturns image of selected frameget_metadataFile info, variables, stylesget_variable_defsExtracts design tokens & variableswhoamiShows connected Figma account
-
-Troubleshooting
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-IssueFix"File could not be accessed"Ensure file is shared as Anyone with link can view"Unauthorized" or token errorRegenerate PAT with all permissions checkedFigma shows disconnectedRun: gemini mcp remove figma → Reconnect with new tokenWrong frame selectedAlways use Copy link to selection (not just file link)
-
-Best Practices & Pro Tips
-
-Always start with one frame
-Use specific prompts:
-→ "Make it mobile-first responsive"
-→ "Use Tailwind v3.4+"
-→ "Add dark mode with dark: prefix"
-→ "Include proper ARIA labels"
-Ask to save files:
-→ "...and save as HomePage.tsx and styles.css"
-
-
-Example Prompts (Copy-Paste Ready)
-Bashgemini "Create a fully responsive landing page in React + Tailwind from this frame. Use modern best practices: https://www.figma.com/file/...&node-id=123-456"
-Bashgemini "Generate a Next.js dashboard sidebar component with dark mode support from: [LINK]"
-Bashgemini "Convert this card design to HTML + Tailwind with hover effects and accessibility: [LINK]"
-
-Final Checklist
-
- Gemini CLI installed
- Figma PAT generated & saved
- Connected via gemini mcp add
- Verified with gemini mcp list
- File shared publicly
- Used frame-specific link
- Ran code generation prompt
-
-
-Resources
-
-Gemini CLI Docs → https://ai.google.dev/gemini-api/docs/cli
-Figma MCP → https://mcp.figma.com
-Gemini API → https://ai.google.dev
